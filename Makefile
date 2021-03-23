@@ -1,11 +1,11 @@
 NAME = Libasm
-TEST_NAME = main
+TEST_NAME = func_test
 SOURCES_DIRECTORY = srcs
-SOURCES = main.s
+SOURCES = $(shell find $(SOURCES_DIRECTORY) \( -name '*.s' \! -name '*_bonus.s' \))
 OBJECTS = $(patsubst %.s, %.o, $(SOURCES))
 INCLUDES = includes
 HEADERS = $(shell find $(INCLUDES_DIRECTORY) \( -name '*.h' \! -name '*_bonus.h' \))
-ASS = nasm
+ASS = /usr/local/bin/nasm
 ASS_FLAGS = -f macho64
 LINKER = ld
 LINKER_FLAGS = -macosx_version_min 10.7.0
@@ -19,7 +19,7 @@ ${NAME}:	${OBJECTS}
 			$(ASS) $(ASS_FLAGS) -o $@ $<
 
 test:		all
-			./main
+			./${TEST_NAME}
 
 clean:
 			rm -rf $(OBJECTS)
