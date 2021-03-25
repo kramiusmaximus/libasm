@@ -3,7 +3,9 @@
 
 int main()
 {
-	char *s = "ABCD";
+	char *s = "abcd";
+	char *p = "a";
 
-	printf("%d\n", ft_strlen(s));
+	printf("%s\n", ft_strcpy(s, p));
+	return (0);
 }

@@ -1,7 +1,7 @@
-global    	_ft_strlen
+global    	_ft_write
 section   	.text
 
-_ft_strlen:
+_ft_write:
                 mov	rax, 0
                 jmp loop_condition
 
@@ -13,4 +13,3 @@ loop:
                 inc rax
                 inc rdi
                 jmp loop_condition
-
