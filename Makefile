@@ -1,7 +1,7 @@
 NAME = Libasm
 TEST_NAME = func_test
 SOURCES_DIRECTORY = srcs
-SOURCES =  srcs/ft_strlen.s srcs/ft_strcmp.s srcs/ft_strcpy.s
+SOURCES =  srcs/ft_strlen.s srcs/ft_strcmp.s srcs/ft_strcpy.s srcs/ft_strdup.s
 OBJECTS = $(patsubst %.s, %.o, $(SOURCES))
 INCLUDES = includes
 HEADERS = $(shell find $(INCLUDES_DIRECTORY) \( -name '*.h' \! -name '*_bonus.h' \))
