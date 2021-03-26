@@ -1,9 +1,14 @@
 global    	_ft_strcpy
 section   	.text
 
-_ft_strcpy
+_ft_strcpy:
                 mov	rax, rdi
-                jmp loop_condition
+
+check_null_ptr:
+                cmp rdi, 0
+                je  return
+                cmp rsi, 0
+                je  return
 
 loop_condition:
                 cmp byte [rsi], 0
@@ -18,4 +23,5 @@ loop:
 
 end:
                 mov byte [rdi], 0
+return:
                 ret

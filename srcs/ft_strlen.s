@@ -3,14 +3,20 @@ section   	.text
 
 _ft_strlen:
                 mov	rax, 0
-                jmp loop_condition
+                mov rbx, rdi
+
+check_null_ptr:
+                cmp rbx, 0
+                je  return
 
 loop_condition:
-                cmp byte [rdi], 0
+                cmp byte [rbx], 0
                 jne loop
                 ret
 loop:
                 inc rax
-                inc rdi
+                inc rbx
                 jmp loop_condition
+return:
+                ret
 

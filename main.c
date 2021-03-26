@@ -1,11 +1,11 @@
 #include	"libasm.h"
 #include	<stdio.h>
-#include	<string.h>
+
 
 int main()
 {
-	char *s = "Hello, World!";
+	char *s1 = "ABCDE";
+	char *s2 = "ABCE";
 
-	printf("%s\n", ft_strdup(s));
 	return (0);
 }
