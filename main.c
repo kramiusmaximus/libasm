@@ -18,7 +18,7 @@ int main()
 	printf("s1: %s\ns2: %s\ns3: %s\ns4: %s\n\n", s1, s2, s3, s4);
 	printf("TESTING FT_STRLEN\n");
 	printf("strlen(s1) = %lu, ft_strlen(s1) = %lu\n", strlen(s1), ft_strlen(s1));
-	printf("strlen(s3) = %lu, ft_strlen(s3) = %lu\n\n",  strlen(s1), ft_strlen(s3));
+	printf("strlen(s3) = %lu, ft_strlen(s3) = %lu\n\n",  strlen(s3), ft_strlen(s3));
 
 	printf("TESTING FT_STRCPY\n");
 	printf("strcpy(s1, s2) = %s, ft_strcpy(s1, s2) = %s\n", strcpy(s1, s2), ft_strcpy(s1, s2));
