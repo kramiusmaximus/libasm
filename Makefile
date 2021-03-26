@@ -1,10 +1,10 @@
-NAME = Libasm.a
-TEST_NAME = func_test
+NAME = libasm.a
+TEST_NAME = libasm_test.ass
 SOURCES_DIRECTORY = srcs
 SOURCES =  srcs/ft_strlen.s srcs/ft_strcmp.s srcs/ft_strcpy.s srcs/ft_strdup.s srcs/ft_write.s srcs/ft_read.s
 OBJECTS = $(patsubst %.s, %.o, $(SOURCES))
 INCLUDES = includes
-HEADERS = $(shell find $(INCLUDES_DIRECTORY) \( -name '*.h' \! -name '*_bonus.h' \))
+HEADERS = includes/libasm.h
 ASS = /usr/local/bin/nasm
 ASS_FLAGS = -f macho64
 LINKER = ld
@@ -12,11 +12,11 @@ LINKER_FLAGS = -macosx_version_min 10.14.0
 
 all:	${NAME}
 
-${NAME}:	${OBJECTS}
+${NAME}:	${OBJECTS}  ${HEADERS}
 			ar rc $(NAME) $(OBJECTS)
 			ranlib $(NAME)
 
-%.o:		%.s ${HEADERS}
+%.o:		%.s
 			$(ASS) $(ASS_FLAGS) -o $@ $<
 
 test:		all
